@@ -1,0 +1,33 @@
+import { Candy } from "../models/candy.model";
+
+export function mapApiResponseToCandy(apiData: any[]): Candy[] {
+    return apiData.map(item => ({
+        id: item.id,
+        title: item.name,
+        description: item.description || '', // Default to empty string if not provided
+        price: item.price,
+        imageThumbnailUrl: item.images.thumbnail,
+        isOnSale: item.on_sale,
+        isInStock: item.stock_status === 'instock', // Convert stock status to boolean
+        categoryId: item.categoryId || 0 // Handle category appropriately
+    }));
+}
+
+// const toCamelCase = str => {
+//     const s =
+//       str &&
+//       str
+//         .match(
+//           /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g
+//         )
+//         .map(x => x.slice(0, 1).toUpperCase() + x.slice(1).toLowerCase())
+//         .join('');
+//     return s.slice(0, 1).toLowerCase() + s.slice(1);
+//   };
+  
+//   toCamelCase('some_database_field_name'); // 'someDatabaseFieldName'
+//   toCamelCase('Some label that needs to be camelized');
+//   // 'someLabelThatNeedsToBeCamelized'
+//   toCamelCase('some-javascript-property'); // 'someJavascriptProperty'
+//   toCamelCase('some-mixed_string with spaces_underscores-and-hyphens');
+//   // 'someMixedStringWithSpacesUnderscoresAndHyphens'

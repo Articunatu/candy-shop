@@ -1,0 +1,14 @@
+<li class="dropdown">
+    <button class="dropdown-toggle" data-toggle="dropdown">
+        Categories <b class="caret"></b>
+    </button>
+    <ul class="dropdown-menu">
+        <li *ngFor="let category of categories">
+            <button (click)="category.CategoryName"></button>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <button>View All Candy</button>
+        </li>
+    </ul>
+</li>

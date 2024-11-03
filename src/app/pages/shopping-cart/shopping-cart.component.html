@@ -1,0 +1,36 @@
+<h2>Kundvagn: Allt godis du vill ha!</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Antal</th>
+            <th>Godis</th>
+            <th class="text-right">Pris</th>
+            <th class="text-right">Summa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of shoppingCart.shoppingCartItems">
+            <td class="text-left">
+                <button class="btn btn-primary" (click)="removeFromShoppingCart">-</button>
+                <span>{{item.amount}}</span>
+                <button class="btn btn-primary" (click)="addToShoppingCart">+</button>
+            </td>
+            <td class="text-center">{{item.amount}}</td>
+            <td class="text-left">{{item.candy.title}}</td>
+            <td class="text-right">{{item.candy.price }}kr</td>
+            <td class="text-right">
+                {{item.amount * item.candy.price }}
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4" class="text-right">Total</td>
+            <td class="text-right">{{shoppingCartTotal}}kr</td>
+        </tr>
+    </tfoot>
+</table>
+<div class="text-center">
+    <button class="btn btn-primary" (click)="clearCart">Clear Cart</button>
+</div>

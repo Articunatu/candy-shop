@@ -1,0 +1,33 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="" class="col-md-2">Förnamn</label>
+        <input type="text" class="form-control" name="firstName" [(ngModel)] ="user.firstName"> 
+    </div>
+    <div class="form-group">
+        <label for="" class="col-md-2">Efternamn</label>
+        <input type="text" class="form-control" name="lastName" [(ngModel)] ="user.lastName"> 
+    </div>
+    <div class="form-group">
+        <label for="" class="col-md-2">Adress</label>
+        <input type="text" class="form-control" name="address" [(ngModel)] ="user.address"> 
+    </div>  
+    <div class="form-group">
+        <label for="" class="col-md-2">Postnummer</label>
+        <input type="text" class="form-control" name="zipCode" [(ngModel)] ="user.zipCode"> 
+    </div>
+    <div class="form-group">
+        <label for="" class="col-md-2">Stad</label>
+        <input type="text" class="form-control" name="city" [(ngModel)] ="user.city"> 
+    </div>
+    <div class="form-group">
+        <label for="" class="col-md-2">E-Post</label>
+        <input type="text" class="form-control" name="eMail" [(ngModel)] ="user.eMail"> 
+    </div>
+    <div class="form-group">
+        <label for="" class="col-md-2">Telefonnummer</label>
+        <input type="text" class="form-control" name="phoneNumber" [(ngModel)] ="user.phoneNumber"> 
+    </div>
+    <div class="col-md-offset-2 col-md-5">
+        <button class="btn btn-success" type="submit">SKICKA</button>
+    </div>
+</form>
